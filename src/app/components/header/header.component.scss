@@ -1,43 +1,65 @@
 @import "../../../Scss/variables";
 @import "../../../Scss/placeholder";
 @import "../../../Scss/keyframes";
+@import "../../../Scss/mixins";
 
 header {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-      rgba(241, 149, 149, 0.3),
-      rgba(245, 234, 234, 0.5)
-    ),
-    url("../../../assets/images/Antibes.jpg") fixed center no-repeat;
+  // width: 100%;
+  height: 70rem;
+  // background: linear-gradient(
+  //     rgba(241, 149, 149, 0.3),
+  //     rgba(245, 234, 234, 0.5)
+  //   ),
+  background: url("../../../assets/images/antibesBg.jpg") fixed center no-repeat;
   background-size: cover;
   @extend %flex-column-sa;
 }
 
 .title-banner {
+  width: 100%;
   text-align: center;
   h1 {
     font-size: 8rem;
     color: $primary-color;
     animation: moveToLeft 2s;
+    @include tablet {
+      font-size: 6rem;
+    }
+    @include mobile {
+      font-size: 4rem;
+    }
   }
   h2 {
     margin-top: 2rem;
     font-size: 6rem;
     color: $primary-color;
     animation: moveToRight 2s;
+    @include tablet {
+      font-size: 4rem;
+    }
+    @include mobile {
+      font-size: 3rem;
+    }
   }
 }
 
+nav {
+  width: 100%;
+}
+
 .nav-list {
-  width: 100vw;
   display: flex;
   justify-content: space-evenly;
   list-style: none;
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .nav-item {
   transition: all 0.3s 0.3s ease-in-out;
+  // margin: 5rem;
 }
 
 .nav-item:hover {
@@ -55,7 +77,8 @@ header {
 
 //nav-link bouton
 .nav-link {
-  min-width: 8rem;
+  // min-width: 8rem;
+  width: 30rem;
   height: 2.5rem;
   color: #fff;
   padding: 2rem 1.5rem;
@@ -74,6 +97,20 @@ header {
   @extend %flex-center-center;
   font-size: 3rem;
   text-decoration: none;
+  @include laptop {
+    // min-width: 7rem;
+    width: 23rem;
+    font-size: 2.2rem;
+  }
+  @include tablet {
+    width: 30rem;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+  }
+  @include mobile {
+    width: 20rem;
+    font-size: 1.8rem;
+  }
 }
 
 .nav-link:hover {

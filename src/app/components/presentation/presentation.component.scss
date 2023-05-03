@@ -1,0 +1,78 @@
+@import "../../../Scss/variables";
+@import "../../../Scss/placeholder";
+@import "../../../Scss/keyframes";
+@import "../../../Scss/mixins";
+
+.test1 {
+  width: 100%;
+  height: 60rem;
+  margin-top: 5rem;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+//test scotch codepen
+
+.img-tape {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+
+  &:before,
+  &:after {
+    background: rgba(255, 255, 235, 0.6);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    content: "";
+    display: block;
+    height: 2rem;
+    position: absolute;
+    margin: auto;
+    width: 7.5rem;
+  }
+
+  img {
+    width: 45rem;
+    height: 55rem;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    margin: 0 1.25rem;
+    padding: 0.8rem;
+    text-align: center;
+    vertical-align: top;
+    object-fit: cover;
+  }
+}
+
+.img-tape-3 {
+  &:before {
+    left: -0.4rem;
+    top: 1rem;
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    bottom: 1rem;
+    right: -0.5rem;
+    transform: rotate(-45deg);
+  }
+}
+.presentation-container {
+  width: 50rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: $quartiary-color;
+
+  .p1 {
+    font-size: 2.5rem;
+  }
+
+  .p2 {
+    font-size: 1.5rem;
+  }
+}

@@ -2,3 +2,11 @@ $primary-color: #3f3b6c;
 $secondary-color: #624f82;
 $tertiary-color: #9f73ab;
 $quartiary-color: #a3c7d6;
+
+$breakpoint: (
+  mobile: 600px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1400px,
+  large: 1900px,
+);

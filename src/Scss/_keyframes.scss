@@ -1,7 +1,7 @@
 //Animation du header !!
 @keyframes moveToLeft {
   from {
-    transform: translateX(6rem);
+    transform: translateX(4rem);
     opacity: 0;
   }
   to {
@@ -12,7 +12,7 @@
 
 @keyframes moveToRight {
   from {
-    transform: translateX(-6rem);
+    transform: translateX(-4rem);
     opacity: 0;
   }
   to {
@@ -23,7 +23,7 @@
 @keyframes moveToBottom {
   0% {
     opacity: 0;
-    transform: translateY(6rem);
+    transform: translateY(4rem);
   }
 
   100% {
@@ -35,7 +35,7 @@
 @keyframes moveToTop {
   0% {
     opacity: 0;
-    transform: translateY(-6rem);
+    transform: translateY(-4rem);
   }
 
   100% {

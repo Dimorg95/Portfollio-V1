@@ -1,0 +1,30 @@
+@import "./variables";
+
+@mixin large {
+  @media screen and (max-width: map-get($breakpoint, large)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: map-get($breakpoint, desktop)) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: map-get($breakpoint, laptop)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: map-get($breakpoint, tablet)) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: map-get($breakpoint, mobile)) {
+    @content;
+  }
+}

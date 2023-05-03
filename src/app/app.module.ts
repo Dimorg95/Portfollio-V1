@@ -6,15 +6,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    PresentationComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, HeaderComponent, PresentationComponent],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

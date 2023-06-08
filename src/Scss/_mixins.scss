@@ -28,3 +28,14 @@
     @content;
   }
 }
+@mixin littleMobile {
+  @media screen and (max-width: map-get($breakpoint, littleMobile)) {
+    @content;
+  }
+}
+
+@mixin flex-column-center {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

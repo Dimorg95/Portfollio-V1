@@ -1,9 +1,11 @@
-$primary-color: #3f3b6c;
-$secondary-color: #624f82;
-$tertiary-color: #9f73ab;
-$quartiary-color: #a3c7d6;
+$font-color-one: #2e3244;
+$background-color-one: rgb(197, 198, 198);
+$font-color-two: #ffffff;
+$background-color-two: rgb(241, 137, 92);
+$font-color-three: #516079;
 
 $breakpoint: (
+  littleMobile: 400px,
   mobile: 600px,
   tablet: 768px,
   laptop: 1024px,

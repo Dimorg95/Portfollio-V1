@@ -3,7 +3,7 @@
 @import "../../../Scss/keyframes";
 @import "../../../Scss/mixins";
 
-.test1 {
+#presentation-container {
   width: 100%;
   height: 60rem;
   margin-top: 3rem;
@@ -12,34 +12,27 @@
   position: relative;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  @extend %flex-center-evenly;
   z-index: 1;
+  @include laptop {
+    height: 120rem;
+    flex-direction: column;
+  }
+  @include tablet {
+    height: 160rem;
+  }
+  @include littleMobile {
+    height: 145rem;
+  }
 }
-// #particles-container {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   width: 100%;
-//   z-index: 0;
-// }
-// #tsparticles {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   width: 100%;
-//   z-index: 0;
-// }
-//test scotch codepen
 
 .img-tape {
   position: relative;
   text-align: center;
   display: inline-block;
-
+  @include laptop {
+    margin-top: 3rem;
+  }
   &:before,
   &:after {
     background: rgba(255, 255, 235, 0.6);
@@ -64,6 +57,15 @@
     text-align: center;
     vertical-align: top;
     object-fit: cover;
+    @include desktop {
+      width: 35rem;
+      height: 45rem;
+    }
+
+    @include littleMobile {
+      width: 25rem;
+      height: 35rem;
+    }
   }
 }
 
@@ -81,57 +83,101 @@
   }
 }
 .presentation-container {
-  width: 85rem;
+  width: 100rem;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
+  @extend %flex-column-sa;
+  color: $font-color-two;
   font-size: 2.5rem;
   z-index: 1;
+  @include laptop {
+    width: 100%;
+  }
+  @include tablet {
+    margin-top: 3rem;
+    justify-content: flex-start;
+  }
   .paragraphe {
     height: 10rem;
+    width: 50rem;
+    @include mobile {
+      width: 40rem;
+    }
+    @include littleMobile {
+      width: 30rem;
+    }
 
     .p1 {
       font-size: 4rem;
+      text-align: center;
+      font-weight: 500;
+      @include littleMobile {
+        font-size: 3rem;
+      }
     }
   }
 
-  // .p2 {
-  //   font-size: 1.5rem;
-  //   font-family: "Fredericka the Great", cursive;
-  // }
-
-  .les-post-it {
+  .posts-its {
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+    height: 40rem;
+    @extend %flex-space-evenly;
+    @include tablet {
+      height: 90rem;
+      @include flex-column-center;
+    }
   }
   .post-it {
-    color: #0000;
-    background: #ffc;
+    background: $background-color-two;
     height: 27rem;
     width: 27rem;
     padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // h2 {
-    //   color: black;
-    //   font-size: 3rem;
-    // }
-    p {
-      font-size: 2rem;
-      color: black;
+    @extend %flex-center-center;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    margin-top: 4rem;
+    transition: transform 0.15s linear;
+    @include desktop {
+      width: 20rem;
+      height: 20rem;
     }
-    // ul {
-    //   list-style: none;
+    @include laptop {
+      height: 23rem;
+      width: 23rem;
+    }
+    @include tablet {
+      height: 27rem;
+      width: 27rem;
+    }
+    @include littleMobile {
+      height: 23rem;
+      width: 23rem;
+    }
 
-    //   li {
-    //     color: black;
-    //     font-size: 2rem;
-    //   }
-    // }
+    p {
+      font-family: "Reenie Beanie", cursive;
+      font-size: 3rem;
+      font-weight: 600;
+      color: $font-color-one;
+      @include desktop {
+        font-size: 2rem;
+      }
+      @include laptop {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .post-it-left {
+    transform: rotate(4deg);
+  }
+  .post-it-rigth {
+    transform: rotate(5deg);
+  }
+  .post-it-center {
+    transform: rotate(-3deg);
+  }
+
+  .post-it:hover {
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+    transform: scale(1.25);
+    z-index: 5;
   }
 }

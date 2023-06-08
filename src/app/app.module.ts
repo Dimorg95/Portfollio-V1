@@ -4,10 +4,10 @@ import { NgParticlesModule } from 'ng-particles';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, PresentationComponent],
-  imports: [BrowserModule, NgParticlesModule],
+  imports: [BrowserModule, NgParticlesModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

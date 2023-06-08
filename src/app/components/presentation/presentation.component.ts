@@ -12,10 +12,14 @@ export class PresentationComponent implements OnInit {
     //Animation machine a ecrire
     let isTyping = false;
     const paragraphe = document.querySelector('.p1') as HTMLElement;
-    const text =
-      'Je suis Mathias, en plein reconversion en tant que développeur web, voici mon modeste portfollio.';
+    const text = 'Je suis Mathias, développeur web en pleine apprentissage.';
 
-    //Fonction machine a ecrire au tableau
+    /**
+     * Fonction machine a ecrire au tableau
+     * @param word
+     * @param index
+     * @param onComplete
+     */
     function typeWriter(word: string, index: number, onComplete: () => void) {
       if (index < word.length) {
         setTimeout(() => {

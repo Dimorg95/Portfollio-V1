@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+//deuxieme facon avec renderer et elementref
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-presentation',
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./presentation.component.scss'],
 })
 export class PresentationComponent implements OnInit {
-  constructor() {}
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnInit(): void {
     //Animation machine a ecrire
     let isTyping = false;
-    const paragraphe = document.querySelector('.p1') as HTMLElement;
+    const paragraphe = this.el.nativeElement.querySelector(
+      '.p1'
+    ) as HTMLElement;
     const text = 'Je suis Mathias, développeur web en pleine apprentissage.';
 
     /**
@@ -20,19 +23,25 @@ export class PresentationComponent implements OnInit {
      * @param index
      * @param onComplete
      */
-    function typeWriter(word: string, index: number, onComplete: () => void) {
+    const typeWriter = (
+      word: string,
+      index: number,
+      onComplete: () => void
+    ) => {
       if (index < word.length) {
         setTimeout(() => {
           const span = document.createElement('span');
-          span.textContent = word[index];
+          // span.textContent = word[index];
+          this.renderer.setProperty(span, 'textContent', word[index]);
           span.style.fontFamily = 'Fredericka the Great, cursive';
-          paragraphe.appendChild(span);
+          this.renderer.appendChild(paragraphe, span);
           typeWriter(word, index + 1, onComplete);
-        }, 100);
+        }, 150);
       } else {
         onComplete();
       }
-    }
+    };
+
     //Fonction qui declenche l'ecriture au scroll
     function typeWriterOnScroll() {
       const { scrollTop, clientHeight } = document.documentElement;

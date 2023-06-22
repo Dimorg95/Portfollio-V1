@@ -26,3 +26,15 @@
 %flex-column-center {
   @include flex-column-center;
 }
+
+%flex-column-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+%flex-alignItems-center {
+  display: flex;
+  align-items: center;
+}

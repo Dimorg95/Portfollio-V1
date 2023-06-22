@@ -33,3 +33,9 @@ export const moveToTop = trigger('moveToTop', [
   state('visible', style({ transform: 'translateY(0)', opacity: 1 })),
   transition('hidden => visible', animate('1s ease-in-out')),
 ]);
+//Blur de l'image d'arriere plan
+export const imageBlur = trigger('imageBlur', [
+  state('notBlured', style({ filter: 'blur(0)' })),
+  state('blured', style({ filter: 'blur(2px)' })),
+  transition('notBlured => blured', animate('1s ease-in-out')),
+]);

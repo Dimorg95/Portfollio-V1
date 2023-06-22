@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 // RESET STYLE
 
-// @import "./variables";
-// @import "./keyframes";
-// @import "./placeholder";
-
+@import "./variables";
+@import "./keyframes";
+@import "./placeholder";
+@import "../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel.scss";
+@import "../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default.scss";
 * {
   margin: 0;
   padding: 0;
@@ -12,14 +13,44 @@
   font-size: 62.5%;
   font-family: "Roboto Flex";
 }
+
 html {
-  background: rgb(197, 198, 198);
-  background: radial-gradient(
-    circle,
-    rgba(197, 198, 198, 1) 0%,
-    rgba(241, 137, 92, 0.9023984593837535) 35%,
-    rgba(241, 137, 92, 0.8995973389355743) 65%,
-    rgba(197, 198, 198, 1) 100%
+  background-image: linear-gradient(
+    241deg in oklab,
+    rgb(197, 198, 198) 0%,
+    rgb(241, 137, 92) 76% 76%
   );
   background-size: cover;
+}
+
+//Owl carousel button custom
+
+.gallery .owl-next,
+.gallery .owl-prev {
+  background-color: $font-color-one !important;
+  border-radius: 50% !important;
+  color: $font-color-two !important;
+  width: 5rem;
+  height: 5rem;
+  position: relative !important;
+  transition: all 300ms ease;
+}
+.gallery .owl-next:hover,
+.gallery .owl-prev:hover {
+  background-color: $font-color-three !important;
+  color: $background-color-two !important;
+}
+
+.gallery .owl-next i,
+.gallery .owl-prev i {
+  font-size: 2rem;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
+
+.gallery .owl-stage-outer {
+  @extend %flex-alignItems-center;
+  height: 55rem !important;
 }

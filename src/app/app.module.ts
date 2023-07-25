@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ProjetsListComponent,
     TechnologyComponent,
     ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+@import "../../../Scss/variables";
+@import "../../../Scss/placeholder";
+@import "../../../Scss/keyframes";
+@import "../../../Scss/mixins";
+
+footer {
+  width: 100%;
+  height: 15rem;
+  border: 1px solid black;
+  background-color: $font-color-one;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ul {
+    width: 100%;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.list-logo {
+  font-size: 6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list-lien {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copyright {
+  font-size: 3rem;
+  color: $background-color-two;
+}

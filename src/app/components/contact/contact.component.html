@@ -1,0 +1,68 @@
+<mat-card class="matCardContainer" id="contact" [formGroup]="emailForm">
+  <mat-card-title>Contactez-moi</mat-card-title>
+  <mat-card class="matCardTest">
+    <mat-form-field appearance="fill" subscriptSizing="dynamic">
+      <mat-label>Votre mail</mat-label>
+      <input
+        matInput
+        type="email"
+        placeholder="test@gmail.com"
+        formControlName="email"
+      />
+      <mat-error color="warn">Entrez une adresse mail valide</mat-error>
+    </mat-form-field>
+  </mat-card>
+  <mat-card class="matCardTest">
+    <mat-form-field appearance="fill" subscriptSizing="dynamic">
+      <mat-label>Votre Nom/Prenom</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Xavier Dupont"
+        formControlName="name"
+      />
+      <mat-error color="warn">Champ requis</mat-error>
+    </mat-form-field>
+  </mat-card>
+  <mat-card class="matCardTest">
+    <mat-form-field appearance="fill" subscriptSizing="dynamic">
+      <mat-label>Sujet</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Offre d'emploie"
+        formControlName="subject"
+      />
+      <mat-error color="warn">Sujet du mail requis</mat-error>
+    </mat-form-field>
+  </mat-card>
+  <mat-card class="matCardTest textarea">
+    <mat-form-field
+      appearance="fill"
+      class="inputArea"
+      subscriptSizing="dynamic"
+    >
+      <mat-label>Contenu</mat-label>
+      <textarea
+        matInput
+        placeholder="Je voudrais vous..."
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="10"
+        formControlName="content"
+      ></textarea>
+      <mat-error color="warn">Contenu requis</mat-error>
+    </mat-form-field>
+  </mat-card>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    (click)="onSubmitForm()"
+    [disabled]="emailForm.invalid"
+  >
+    Envoyer
+  </button>
+</mat-card>
+<!-- TEST -->

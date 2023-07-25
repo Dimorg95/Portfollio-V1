@@ -1,11 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
-// RESET STYLE
+//Palette Angular material personaliser
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$primary-palette: (
+  50: #f9e8e5,
+  100: #f9cbb8,
+  200: #f5a98a,
+  300: #f1895c,
+  400: #ee7038,
+  500: #ec590d,
+  600: #e15308,
+  700: #d44d03,
+  800: #c74500,
+  900: #ae3800,
+  A100: #c2e4ff,
+  A200: #addcff,
+  A400: #1f9eff,
+  A700: #00518f,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
+  ),
+);
+$secondary-palette: (
+  50: #eeeefc,
+  100: #d2d7e9,
+  200: #b8bdd3,
+  300: #9da2bd,
+  400: #888eab,
+  500: #737b9b,
+  600: #646c89,
+  700: #535972,
+  800: #42465c,
+  900: #2e3244,
+  A100: #f5f5f5,
+  A200: #eaeaeb,
+  A400: #d6d6d7,
+  A700: #838386,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: white,
+  ),
+);
+$crimson-palette: (
+  50: #fde8ea,
+  100: #f9c7c9,
+  200: #e3908b,
+  300: #d4655f,
+  400: #d94438,
+  500: #da3119,
+  600: #cc261a,
+  700: #bb1b15,
+  800: #ae120e,
+  900: #9f0000,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+$portfolio-primary: mat.define-palette($primary-palette, 700, 300, 900);
+$portfolio-accent: mat.define-palette($secondary-palette, 300, 100, 500);
+$portfolio-warn: mat.define-palette($crimson-palette, 800);
+$portfolio-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $portfolio-primary,
+      accent: $portfolio-accent,
+      warn: $portfolio-warn,
+    ),
+  )
+);
+@include mat.all-component-themes($portfolio-theme);
+
+//Import
 
 @import "./variables";
 @import "./keyframes";
 @import "./placeholder";
-@import "../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel.scss";
-@import "../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default.scss";
+
+//Reset style
 * {
   margin: 0;
   padding: 0;
@@ -25,8 +131,8 @@ html {
 
 //Owl carousel button custom
 
-.gallery .owl-next,
-.gallery .owl-prev {
+#gallery .owl-next,
+#gallery .owl-prev {
   background-color: $font-color-one !important;
   border-radius: 50% !important;
   color: $font-color-two !important;
@@ -35,14 +141,14 @@ html {
   position: relative !important;
   transition: all 300ms ease;
 }
-.gallery .owl-next:hover,
-.gallery .owl-prev:hover {
+#gallery .owl-next:hover,
+#gallery .owl-prev:hover {
   background-color: $font-color-three !important;
   color: $background-color-two !important;
 }
 
-.gallery .owl-next i,
-.gallery .owl-prev i {
+#gallery .owl-next i,
+#gallery .owl-prev i {
   font-size: 2rem;
   position: absolute !important;
   top: 50% !important;
@@ -50,7 +156,39 @@ html {
   transform: translate(-50%, -50%);
 }
 
-.gallery .owl-stage-outer {
+#gallery .owl-stage-outer {
   @extend %flex-alignItems-center;
-  height: 55rem !important;
+  height: 50rem !important;
+  margin-top: 3rem;
+}
+
+//techno Gallery custom
+#techno-gallery .owl-stage-outer {
+  @extend %flex-alignItems-center;
+  height: 15rem !important;
+  margin-top: 2rem;
+}
+
+//SnackBar
+//SnackBar /* Style pour la notification de succès */
+.success-notification {
+  background-color: #4caf50; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  font-size: 20rem;
+  padding: 0.5rem;
+}
+
+.success-notification button {
+  font-size: 4rem;
+}
+/* Style pour la notification d'erreur */
+.error-notification {
+  background-color: #f44336; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  font-size: 20rem;
+  padding: 0.5rem;
+}
+
+.error-notification button {
+  font-size: 4rem;
 }

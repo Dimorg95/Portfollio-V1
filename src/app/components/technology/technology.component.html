@@ -1,0 +1,9 @@
+<section id="techno-gallery">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let img of imgArray">
+      <div class="item">
+        <img src="{{ img.imgName }}" alt="{{ img.imgAlt }}" />
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</section>

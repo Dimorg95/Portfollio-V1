@@ -15,7 +15,7 @@ export class PresentationComponent implements OnInit {
     const paragraphe = this.el.nativeElement.querySelector(
       '.p1'
     ) as HTMLElement;
-    const text = 'Je suis Mathias, développeur web en pleine apprentissage.';
+    const text = 'Je suis Mathias, développeur web en apprentissage.';
 
     /**
      * Fonction machine a ecrire au tableau
@@ -30,8 +30,7 @@ export class PresentationComponent implements OnInit {
     ) => {
       if (index < word.length) {
         setTimeout(() => {
-          const span = document.createElement('span');
-          // span.textContent = word[index];
+          const span = this.renderer.createElement('span');
           this.renderer.setProperty(span, 'textContent', word[index]);
           span.style.fontFamily = 'Fredericka the Great, cursive';
           this.renderer.appendChild(paragraphe, span);

@@ -1,0 +1,23 @@
+@import "../../../Scss/variables";
+@import "../../../Scss/placeholder";
+@import "../../../Scss/keyframes";
+@import "../../../Scss/mixins";
+
+.item {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 0rem 1rem;
+  background-color: #fff;
+  transition: all 200ms ease-in-out;
+  box-shadow: $box-shadow;
+}
+
+.item:hover {
+  transform: scale(1.1);
+  box-shadow: $box-shadow-hover;
+}
+
+img {
+  height: 10rem;
+  object-fit: contain;
+}

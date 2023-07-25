@@ -3,6 +3,16 @@ $background-color-one: #c5c6c6;
 $font-color-two: rgb(255, 255, 255);
 $background-color-two: #f1895c;
 $font-color-three: #516079;
+$box-shadow: 0px 0px 8px 3px rgba(46, 50, 68, 0.4);
+$box-shadow-hover: 0px 0px 11px 5px rgba(46, 50, 68, 0.7);
+$background-color-project: linear-gradient(
+  to left bottom,
+  #2e3244,
+  #373d51,
+  #40485e,
+  #48546b,
+  #516079
+);
 
 $breakpoint: (
   littleMobile: 400px,

@@ -30,3 +30,37 @@ export const customOptions: OwlOptions = {
   },
   nav: true,
 };
+
+export const customOptionTech: OwlOptions = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: true,
+  pullDrag: false,
+  dots: false,
+  navSpeed: 700,
+  navText: [],
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 2,
+    },
+    400: {
+      items: 3,
+    },
+    740: {
+      items: 4,
+    },
+    940: {
+      items: 5,
+    },
+    1200: {
+      items: 6,
+    },
+    1450: {
+      items: 7,
+    },
+  },
+  nav: false,
+};

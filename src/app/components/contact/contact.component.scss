@@ -1,0 +1,55 @@
+@import "../../../Scss/variables";
+@import "../../../Scss/placeholder";
+@import "../../../Scss/keyframes";
+@import "../../../Scss/mixins";
+
+.matCardContainer {
+  width: 65rem;
+  height: 85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3rem auto 0rem auto;
+  box-shadow: $box-shadow-hover;
+  background-image: $background-color-project;
+  mat-card-title {
+    font-size: 3rem;
+    color: $font-color-two;
+    letter-spacing: 0.4rem;
+    text-shadow: 5px 8px 3px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.matCardTest {
+  width: 55rem;
+  text-align: center;
+  // box-shadow: $box-shadow;
+  box-shadow: 0px 0px 11px 1px rgba(255, 255, 255, 0.4);
+  height: 12.5rem;
+  // background-color: $font-color-three;
+}
+
+mat-label {
+  font-size: 2.5rem;
+}
+
+mat-form-field {
+  width: 90%;
+  height: 8rem;
+  margin: auto;
+  font-size: 8rem;
+}
+
+.textarea {
+  height: 25rem;
+}
+
+.inputArea {
+  height: 20rem;
+}
+
+button {
+  font-size: 5rem;
+  width: 15rem;
+}

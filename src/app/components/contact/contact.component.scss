@@ -6,10 +6,7 @@
 .matCardContainer {
   width: 65rem;
   height: 85rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  @extend %flex-column-sa;
   margin: 3rem auto 3rem auto;
   box-shadow: $box-shadow-hover;
   background-image: $background-color-project;
